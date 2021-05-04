@@ -25,7 +25,30 @@
         'Bevan, Aneurin', 'Bevel, Ken', 'Biden, Joseph', 'Bierce, Ambrose', 'Biko, Steve', 'Billings, Josh', 'Biondo, Frank', 'Birrell, Augustine',
         'Black, Elk', 'Blair, Robert', 'Blair, Tony', 'Blake, William'];
 
-        
+        // Array.prototype.filter()
+        const fifteen = inventors.filter(function(inventor) {
+            if(inventor.year >= 1500 && inventor.year < 1600) {
+                return true;
+            }
+        });
+        /* const fifteen = inventors.filter(inventor => (inventor.year >= 1500 && inventor.year < 1600)); */
+        console.table(fifteen);
+
+        // Array.prototype.map()
+        const fullNames = inventors.map(inventor => inventor.first + ' ' + inventor.last);
+        /* const fullNames = inventors.map(inventor =>`${inventor.first} ${inventor.last}`);*/
+        console.log(fullNames);
+
+        // Array.prototype.sort()
+        const ordered = inventors.sort(function(a, b) {
+            if(a.year > b.year) {
+                return 1;
+            } else {
+                return -1;
+            }
+        });
+        /* const ordered = inventors.sort((a, b) => a.year > b.year ? 1 : -1); */
+        console.table(ordered);
 
     </script>
 </body>
